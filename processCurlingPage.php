@@ -13,8 +13,6 @@
 		
 		curlingPage($status, "starman" ,"gk",$debug=false);
 		
-	
-		
 	}
 	
 	?>
