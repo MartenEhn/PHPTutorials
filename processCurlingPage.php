@@ -12,7 +12,6 @@
 		echo "status:" . $status . "<br><br>";
 		
 		curlingPage($status, "starman" ,"gk",$debug=false);
-		
 	}
 	
 	?>
