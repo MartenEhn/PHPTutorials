@@ -13,7 +13,7 @@
 		
 		curlingPage($status, "starman" ,"gk",$debug=false);
 		
-		//setFacebookStatus("Hej", "marten_johan.ehn@comhem.se", "1FAL2jes");
+	
 		
 	}
 	
