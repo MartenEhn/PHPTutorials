@@ -71,8 +71,6 @@ class DBConnection implements iDBConnection
 		echo 'Destructor called in ' . __FILE__ ;
 	}
 	
-
-	
 }
 
 class myDBConnection extends DBConnection
