@@ -21,7 +21,7 @@
    
   foreach( $database as $user ) 
   { 
-  $b = $doc->createElement( "database" ); 
+  $b = $doc->createElement( "db_database" ); 
    
   $name = $doc->createElement( "db_username" ); 
   $name->appendChild( 
