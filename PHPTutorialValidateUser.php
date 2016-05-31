@@ -52,7 +52,7 @@ function validateUser($username, $password)
 	$user = $array['db_database'][0]; //Denna del är inte en array utan ett "SimpleXMLElement Object"
 	$user = xml2array($user); //Konvertera XML-objekt till array
 	
-	print_r ("Validate user: " . $user['db_username']);  //Objekt vet inte egenrtligen hur man plockar ut ur det 
+	print_r ("Validate user: " . $username . " as " . $user['db_username']);  //Objekt vet inte egenrtligen hur man plockar ut ur det 
 	echo '<br>';
 	
 	if ($user['db_password'] == crypt($password, 'rl') )// Kolla om samma
@@ -65,7 +65,7 @@ function validateUser($username, $password)
 	{
 		echo "Felaktigt l&ouml;senord!";
 		echo '<br>';
-		echo "Ska vara:" . $array['db_password'][0];
+		echo "Ska vara:" . $user['db_password'];
 		echo '<br>';
 		echo "Men &auml;r:" . $password;
 		return false;
