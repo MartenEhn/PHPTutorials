@@ -34,18 +34,13 @@ function ReadFromXML($xmlfile)
 
 function validateUser($username, $password)
 {
-	//Den associativa arrayens utseende
-	//static $logindata = array ("starman"=>"gk", "TestUser"=>"Password");
 	
-
-	
-//	$credentials = ReadFromXML('appconfig.xml');//LÃ¤s in data configurationsfil 
-	$credentials = ReadFromXML('write2.xml');//Läs in data configurationsfil där lösenordet är krypterat
-	
+	$credentials = ReadFromXML('appconfig.xml');//LÃ¤s in data configurationsfil 
 	
 	
 	$array = xml2array($credentials); //Konvertera XML-objekt till array
 	
+	 //Den associativa arrayens utseende
 	/*
 	echo "Detta är innehållet i filen med konfigureringsdata i formen xml2array: <br> ";
 	echo '<pre>';
@@ -53,18 +48,18 @@ function validateUser($username, $password)
 	echo '</pre>';
 	echo '<br>';
 	*/
+	
 	$user = $array['db_database'][0]; //Denna del är inte en array utan ett "SimpleXMLElement Object"
 	$user = xml2array($user); //Konvertera XML-objekt till array
 	
 	print_r ("Validate user: " . $user['db_username']);  //Objekt vet inte egenrtligen hur man plockar ut ur det 
 	echo '<br>';
 	
-	if ($user['db_password'] == crypt($password, 'rl') )
+	if ($user['db_password'] == crypt($password, 'rl') )// Kolla om samma
 	{
 		echo "successful validation <br>";
 		
 		return true;
-	
 	}
 	else
 	{
@@ -76,10 +71,6 @@ function validateUser($username, $password)
 		return false;
 	}
 }
-
-
-
-
 
 ?>
 </body>

@@ -56,5 +56,5 @@
   }//Slut foreach
   
   echo $doc->saveXML(); 
-  $doc->save("write2.xml"); 
+  $doc->save("appconfig.xml"); 
   ?>
