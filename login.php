@@ -13,7 +13,6 @@
 	<input type='submit' name='Submit' value='Submit' />
 	
 	
-	
 	<?php 
 	require_once("processlogin.php");
 	?>
