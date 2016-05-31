@@ -46,16 +46,20 @@ function validateUser($username, $password)
 	
 	$array = xml2array($credentials); //Konvertera XML-objekt till array
 	
-	
+	/*
 	echo "Detta är innehållet i filen med konfigureringsdata i formen xml2array: <br> ";
+	echo '<pre>';
 	print_r($array);
+	echo '</pre>';
+	echo '<br>';
+	*/
+	$user = $array['db_database'][0]; //Denna del är inte en array utan ett "SimpleXMLElement Object"
+	$user = xml2array($user); //Konvertera XML-objekt till array
+	
+	print_r ("Validate user: " . $user['db_username']);  //Objekt vet inte egenrtligen hur man plockar ut ur det 
 	echo '<br>';
 	
-	
-	echo "Validate user: " . $array['db_username'][0];  //Objekt vet inte egenrtligen hur man plockar ut ur det 
-	echo '<br>';
-	
-	if ($array['db_password'][0] == crypt($password, 'rl') )
+	if ($user['db_password'] == crypt($password, 'rl') )
 	{
 		echo "successful validation <br>";
 		
