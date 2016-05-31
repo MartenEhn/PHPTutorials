@@ -1,0 +1,13 @@
+<!-- String databaseURL = "jdbc:mysql://localhost:3306/hotel";
+		String user = "";
+		String password = "";-->
+		
+
+<application>
+<!-- <database> -->
+<db_username>starman</db_username>
+<db_password>gk</db_password>
+<db_host>localhost</db_host>
+<db_port>3306</db_port>
+<!--</database>	-->	
+</application> 
